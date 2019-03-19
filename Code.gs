@@ -27,7 +27,7 @@ function doGet(e) {
           var subfolder = folder.createFolder(date);
         }
       }
-      matches = lines[j].match('<(https:\\/\\/www.tadpoles.com\\/m\\/p\\/.+)>');
+      matches = lines[j].match('<(https:\\/\\/www\\.tadpoles\\.com\\/m\\/\\w\\/.+)>');
       if (matches) {
         var file = subfolder.createFile(UrlFetchApp.fetch(matches[1] + '?d=t').getBlob());
         file.setName(name + ' - ' + date + ' - ' + file.getName());
